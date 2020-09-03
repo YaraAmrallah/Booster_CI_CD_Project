@@ -25,7 +25,7 @@ SECRET_KEY = 'qmrt%#_z$77dlllgt*4786tc=cn_3$+55k&a=o24pyay)4bv&+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*] 
 
 
 # Application definition
