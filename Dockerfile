@@ -3,6 +3,7 @@ RUN apt-get update -qq
 RUN apt-get -y install python3.6
 RUN apt-get -qqy install python3-pip
 RUN apt-get install -y libgirepository1.0-dev
+RUN apt-get install -y gobject-introspection-1.0
 
 ADD . /simpleApp
 WORKDIR /simpleApp
