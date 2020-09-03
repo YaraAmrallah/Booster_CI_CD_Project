@@ -1,12 +1,11 @@
-FROM python:3.6
+FROM python:3.6-alpine
 RUN apt-get update -qq
 RUN apt-get -qqy install python3-pip
 
-ADD simpleApp /simpleApp
+ADD . /simpleApp
 WORKDIR /simpleApp
-ADD requirements.txt ./
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 RUN python3.6 manage.py makemigrations
 RUN python3.6 manage.py migrate
 COPY . .
