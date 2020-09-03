@@ -2,6 +2,7 @@ FROM ubuntu
 RUN apt-get update -qq
 RUN apt-get -y install python3.6
 RUN apt-get -qqy install python3-pip
+RUN apt-get install -y libgirepository1.0-dev
 
 ADD . /simpleApp
 WORKDIR /simpleApp
