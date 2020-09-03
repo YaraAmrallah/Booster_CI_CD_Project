@@ -3,7 +3,6 @@ FROM python:3.6-buster
 ADD . /simpleApp
 WORKDIR /simpleApp
 
-RUN pip install --user pygobject3.26.1
 RUN pip install -r requirements.txt
 RUN python3.6 manage.py makemigrations
 RUN python3.6 manage.py migrate
