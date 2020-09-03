@@ -8,5 +8,6 @@ RUN python3.6 manage.py makemigrations
 RUN python3.6 manage.py migrate
 COPY . .
 
+RUN ALLOWED_HOSTS = ['*']
 EXPOSE 8000
 CMD [python3.6 manage.py runserver 0.0.0.0:8000]
