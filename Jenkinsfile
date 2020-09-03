@@ -10,7 +10,7 @@ pipeline {
 
         stage('build image') {
             steps {
-              sh 'docker build -t yaraamrallah/django_app:v1.0 .'
+              sh 'docker build -t yaraamrallah/django_app_dev:v1.0 .'
             }
             }
 
@@ -18,14 +18,14 @@ pipeline {
             steps {
               withCredentials([usernamePassword(credentialsId:"docker",usernameVariable:"USERNAME",passwordVariable:"PASSWORD")]){
               sh 'docker login --username $USERNAME --password $PASSWORD'
-              sh 'docker push yaraamrallah/django_app:v1.0'
+              sh 'docker push yaraamrallah/django_app_dev:v1.0'
               }
             }
         }
 
         stage('deploy') {
           steps {
-            sh 'docker run -d -p 8050:8000 yaraamrallah/django_app:v1.0'
+            sh 'docker run -d -p 8050:8000 yaraamrallah/django_app_dev:v1.0'
         }
         }
     }
