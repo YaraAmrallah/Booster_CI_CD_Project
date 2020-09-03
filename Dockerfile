@@ -1,6 +1,4 @@
 FROM python:3.6-alpine
-RUN apt-get update -qq
-RUN apt-get -qqy install python3-pip
 
 ADD . /simpleApp
 WORKDIR /simpleApp
